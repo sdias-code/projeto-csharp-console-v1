@@ -1,0 +1,41 @@
+
+https://www.youtube.com/watch?v=nC0E52Vz1QI
+
+Microsoft.EntityFrameworkCore.SqlServer
+version 2.1.4
+
+Microsoft.EntityFrameworkCore.Tools
+version 2.1.4
+
+Microsoft.Extensions.Logging.Console
+version 2.1.1
+
+add-migration inicial
+Update-database
+remove-migration
+
+SDIAS-PC\SQLEXPRESS
+*****************************
+**** instancia funcionou ****
+Server=(localdb)\\mssqllocaldb
+optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=dbRelacionamentos; Integrated Security=True;");
+
+******************************
+Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+
+optionsBuilder.UseSqlServer("Data Source=SDIAS-PC\SQLEXPRESS;Initial Catalog=MyDbRelacionamentos;Integrated Security=True;");
+
+Data Source=SDIAS-PC\SQLEXPRESS;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+
+SQLExpress
+SQLEXPRESS
+
+optionsBuilder
+.EnableSensitiveDataLogging(true)
+.UseLoggerFactory(newLoggerFactory().AddConsole((category, level) =>
+level == LogLevel.Information &&
+category == DbLoggerCategory.Database.Command.Name, true));
+
+ <connectionStrings>
+    <add name="Usuarios" connectionString="Data Source=LAB04\SQLEXPRESS; Initial Catalog=DbUsuarios; Integrated Security=True; " providerName="System.Data.SqlClient" />
+  </connectionStrings>
